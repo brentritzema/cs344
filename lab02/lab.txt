@@ -1,0 +1,19 @@
+2.1
+    a. It seems that both the hill-climbing and simulated annealing searches solved the problem. Each algorithm found the maximum (15).
+    b. Hill climbing is faster by a great deal
+    c. Changing the starting x makes some difference but not much of a difference
+    d. Making the delta too large causes the searches to fail to find the maximum. Making it too small causes both algorithm to get close but they doesn't land on the maximum exactly.
+    e. This controls how likely the algorithm is to move downhill
+2.2
+    a. Simulated annealing seems to do better most of the time. Hill climb is heavily dependent on the random starting point. If the starting point is a greater value, then hill climbing will do better. Simulated annealing probably does better beacause it is able to move move farther, independent of the starting point.
+    b. The starting value makes a huge difference. Usually when the value is lower, hill climbing does much worse because it gets stuck on a small peak.
+    c. Increasing the step value makes simulated annealing perform much better in most cases, and it doesn't effect hill-climbing much. Decreasing the step value made hill climbing get stuck a bit more, but seemed to help simulated annealing beat hill climbing more consistently.
+    d. The maximum value is infinity and the minimum value is 0. They can get close to the minimum but nowhere close to the maximum with the current randomized start value range. If I artificially limited the maximum and by saying it was the value when x = 30, then the maximum would be 30 and simulated annealing would get close many times.
+2.3
+    a. Both algorithms do a lot better with random restarts. They do better because they are both heavily dependent on the initial value so when you throw in a chance to increase the intial value, it does well.
+    b. The average values for hill climbing fall in the mid 20's, whereas often simulated annealing can often go into values 30+.
+    c. Simulated annealing does better because while random restarts help hill climbing, they also help simulated annealing, and simulated annealing is just better at this type of problem since it can actually jump across to a different "hill".
+2.4
+    a. I think it makes the most sense for simulated annealing because it would give more direction to the algorithm which already works well.
+    b. In this situation, you could maintain a large amount of solutions since memory wouldn't be that constrained. However, simulated annealing does take a little longer so time may be a factor. However, since beam search only works with the most promising and this is an pseudo-increasing function you probably wouldn't need to store many extra states.
+    c. I would do a few random restarts and only restart the algorithm at the new x value only when the restart did better than the previous restarts. It's not that much different from random restarts except that it may start at a location that wasn't random, but a previous random ending location that did well.
