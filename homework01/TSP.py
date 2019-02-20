@@ -25,7 +25,6 @@ class TSPVariant(Problem):
         actions = []
         # only swap the inner cities, not the outer cities because it reduces the search space and which city
         # you start at doesn't effect the problem since all cities are interconnected
-        inner_cities = initial[1:self.n-1]
         for permutation in range(1, 10):
             i = randrange(1, self.n-1)
             j = randrange(1, self.n-1)
@@ -82,7 +81,11 @@ if __name__ == '__main__':
 
     connections = {}
     for permutation in list(itertools.permutations(cities, 2)):
-        connections[permutation] = randrange(1, 100)
+        # doubling the amount of work I actually need to do to make things symmetrical
+        # because this is the easiest way I can think of doing it
+        distance = randrange(1, 100)
+        connections[(permutation[1], permutation[0])] = distance
+        connections[permutation] = distance
 
     initial = cities[:]
     initial.append(cities[0])

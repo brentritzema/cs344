@@ -20,7 +20,6 @@ def ClassSchedulingCSP():
 
     """Initialize data structures for the class scheduling problem."""
     classes = ['CS108', 'CS112', 'CS214', 'CS212', 'CS232', 'CS344']
-    # classes = ['CS108', 'CS112']
     faculty = ['dschuurman', 'kvlinden', 'adams', 'norman']
     time_slots = ['mwf900', 'mwf1030', 'tth900', 'tth1030']
     classrooms = ['nh253', 'sb382']
@@ -28,8 +27,6 @@ def ClassSchedulingCSP():
 
     variables = classes
     domain = list(itertools.product(*combination))
-    # for x in range(0, len(domain)):
-    #     domain[x] = "_".join(str(i) for i in domain[x])
     domains = {}
     neighbors = {}
     for var in variables:
@@ -37,8 +34,6 @@ def ClassSchedulingCSP():
         neighbors[var] = [x for x in variables if x != var]
 
     def constraints(A, a, B, b):
-        # a = a.split("_")
-        # b = b.split("_")
         # check if it's the same time
         if a[1] == b[1]:
             # check if profs are the same
