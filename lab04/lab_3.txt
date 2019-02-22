@@ -1,0 +1,24 @@
+a.
+               User             |      -User
+    Test  0.99*0.089 = 0.08811       0.02*0.911 = 0.01822
+    -Test 0.01*0.089 = 0.00089       0.98*0.911 = 0.89278
+
+    i.    P(User) = 0.089
+    ii.   P(test | User) = 0.99
+    iii.  P(-test | User) = 0.01
+    iv.   P(test | -User) = 0.02
+    v.    P(User | test) = P(test | user) * p(user) / p(test) = (0.99 * 0.089) / (0.08811 + 0.01822) = 0.82865
+
+b.
+
+    I want: P(Cancer | test) = (P(test | Cancer) * P(Cancer)) / P(test)
+
+    P(test | Cancer) = 0.8
+    P(Cancer) = 0.01
+    P(test) = 0.008 + 0.09504 = 0.10304
+    P(Cancer | test) = 0.0776
+
+                Cancer          |      -Cancer
+    Test  0.8*0.01 =  0.008        0.096*0.99 = 0.09504
+    -Test 0.2*0.01 =  0.002        0.904*0.99 = 0.89496
+
