@@ -1,0 +1,26 @@
+Exercise 6.1 (I worked with Roy Adams)
+
+1. I would like it to classify a song as "christian song" or "other" based on things like title, author, and description if it exists.
+
+2. We want it to filter non-christian songs from our radio station.
+
+3. Our success metrics would be whether or not someone complains about the song being non-christian.
+   A key result would be a 98% correct classification rate with no false positives.
+   Our model would fail if too many false positives occur.
+
+4. Our output would be a 0 or 1
+   The output would be defined as 0 to be non-christian and 1 to be christian
+
+5. The output will be needed before the song is played, in real time.
+   The output will be consumed by business logic and decide whether or not to play the song.
+
+6. We would use rules such as: if God or Jesus is in the title classify it as christian
+
+7. Our problem is a binary classification problem which predicts Christian or non-christian
+   Already binary classification
+
+8. Title      Artist     YouTube_Description        Output(Christian, non-Christian)
+
+9. We will use a music database and it's genre classifications for labels. We can use the Youtube API for the description.
+
+10. We could start with just Artist which would probably be an adequate predictor variable.

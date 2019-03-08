@@ -1,0 +1,12 @@
+Exercise 6.2
+
+Information gain from the "Hungry?" question:
+
+Entropy(Restaurant) = -(1/2 * lg(1/2) + 1/2 * lg(1/2)) = 1
+
+Remainder(Hungry) = 7/12 * Entropy(Yes) + 5/12 * Entropy(No)
+                  = (7/12 * -(5/7 * lg(5/7) + 2/7 * lg(2/7))) +
+                    (5/12 * -(1/5 * lg(1/5) + 4/5 * lg(4/5)))
+                  = 0.804
+
+InformationGain(Hungry) = 1 - 0.804 = 0.196
