@@ -1,0 +1,14 @@
+a. Compare and contrast categorical vs numerical data:
+Categorical data is textual while numerical data is a number.
+
+b. Submit solutions to tasks 1–2. Include your best hyper-parameter values and the resulting RMSE, but not the training output.
+Task 1: number of rooms
+Best params: learning_rate=0.0001, steps=100, batch_size=1
+RMSE: 168.28
+
+Task 2: population
+Best params: learning_rate: 0,00004, steps=100, batch_size=1
+RMSE: 176.34
+
+c. What are the hyper-parameters learned in these exercises and is there a “standard” tuning algorithm for them?
+Hyper-parameters in this exercise were learning-rate, steps, and batch_size. There is no "standard" tuning algorithm, because hyper-parameters are data dependent.

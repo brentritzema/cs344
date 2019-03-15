@@ -1,0 +1,12 @@
+a.
+cities['50sqmi and saint'] = (cities['Area square miles'] > 50) & cities['City name'].apply(lambda city: city.startswith('San'))
+cities
+
+cities.reindex([3,2,0,1])
+I think this might be allowed because if you allow for null rows, it becomes very easy to add rows where you may not have data for every column.
+
+b.
+Pandas seems to have very useful functions for visualizing data, loading data, and manipulating data in ways more conducive to data science.
+
+c.
+It would be useful to reshuffle/reindex a dataframe if you wished to perhaps manually sort or create a random permutation of the data to perhaps easily select a random subset.

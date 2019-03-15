@@ -1,0 +1,25 @@
+a. Submit solutions to tasks 1–3.
+    Task 1:
+    california_housing_dataframe["rooms_per_person"] = (california_housing_dataframe["total_rooms"] / california_housing_dataframe["population"])
+
+    calibration_data = train_model(
+        learning_rate=0.048,
+        steps=500,
+        batch_size=5,
+        input_feature="rooms_per_person"
+    )
+
+    resulting RMSE: 131.56
+
+    Task 2:
+    plt.scatter(calibration_data["predictions"], calibration_data["targets"])
+
+    Task 3:
+    clipped_feature = california_housing_dataframe['rooms_per_person'].apply(lambda x: max(x, 10))
+    california_housing_dataframe['rooms_per_person'] = clipped_feature
+
+b. What is the purpose of introducing synthetic features?
+    Synthetic features allow us to help our model by accounting for multiple features we think may  be useful when used together.
+
+c. What are outliers and what is typically done with them?
+    Outliers are data that don't fit in with the rest of the data, and usually they are clipped, or adjusted to fit with a reasonable range with other "normal" data.

@@ -1,0 +1,71 @@
+a. Submit solutions to tasks 1–5.
+    Task 1:
+    Well, I already know there are huge outliers in rooms_per_person. I also noticed that income seems very low, even if it was in thousands, perhaps it is in 10s of thousands? I also noticed that the max housing value is exactly 500, and I know there are million-dollar homes in California.
+
+    Task 2:
+    The validation targets seem much higher on average than the training targets. Also, the max longitude is much lower for the training data in comparison to the validation data.
+
+    Task 3:
+    The data was not randomized so taking the first 12,000 and the last 5,000 was not a good way to get random subsets of the data.
+
+    Task 4:
+    The following code was added to the function for task 4:
+
+  # 1. Create input functions.
+  training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets["median_house_value"],
+      batch_size=batch_size)
+  predict_training_input_fn = lambda: my_input_fn(
+      training_examples,
+      training_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)
+  predict_validation_input_fn = lambda: my_input_fn(
+      validation_examples, validation_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)
+
+  .
+  .
+  .
+
+  # 2. Take a break and compute predictions.
+    training_predictions = linear_regressor.predict(input_fn=predict_training_input_fn)
+    training_predictions = np.array([item['predictions'][0] for item in training_predictions])
+
+    validation_predictions = linear_regressor.predict(input_fn=predict_validation_input_fn)
+    validation_predictions = np.array([item['predictions'][0] for item in validation_predictions])
+
+  With learning_rate=0.00003, steps=400, batch_size=1, I got an RSME of 165.80
+
+    Task 5:
+    The code to check the RMSE of the test data was:
+
+test_examples = preprocess_features(california_housing_test_data)
+test_targets = preprocess_targets(california_housing_test_data)
+
+predict_test_input_fn = lambda: my_input_fn(
+      test_examples,
+      test_targets["median_house_value"],
+      num_epochs=1,
+      shuffle=False)
+
+test_predictions = linear_regressor.predict(input_fn=predict_test_input_fn)
+test_predictions = np.array([item['predictions'][0] for item in test_predictions])
+
+root_mean_squared_error = math.sqrt(
+    metrics.mean_squared_error(test_predictions, test_targets))
+
+print("Final RMSE (on test data): %0.2f" % root_mean_squared_error)
+
+      And the resulting RMSE of the test data was 160.76, which was surprising since it's lower than the training and validation RMSE.
+
+b. Give a one-paragraph summary of what you learned about using training, validation and testing datasets.
+
+    I learned that using validation datasets are a good way to see how well you are training, while you are training,
+    since the data isn't actually trained on but rather used as an input to check performance during the training process.
+    Then testing datasets are even more useful because if you are using validation, it's possible to adjust training based
+    on what you're seeing, but with a testing dataset, it is the ultimate holdout and is really the true test of how well your
+    model can perform predictions. I also learned that you need to make sure that your data order is randomized if you're going to take
+    a non-random set of the data.
