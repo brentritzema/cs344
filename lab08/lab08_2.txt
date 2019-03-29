@@ -1,0 +1,26 @@
+a. They recommend FTRL for L1 optimization, but the code specifies the same rate (learning_rate) for all runs. How is FTRL managing the learning rate?
+
+The learning rate is passed into an optimizer which scales it, so although the learning rate passed in is fixed, the optimizer changes it. It manages it by scaling it "differently for different coefficients".
+
+b. What good does the bucketing/binning do?
+
+It seems that bucketing/binning removes a lot of noise in the data and also can account for outliers.
+
+c. Submit your solutions to tasks 1–2. Did you find their task 1 bucketing to make sense? Identify one unique feature cross for task 2 and explain how it could be useful.
+Task 1:
+  bucketized_latitude = tf.feature_column.bucketized_column(
+    latitude, boundaries=get_quantile_based_boundaries(
+      training_examples["latitude"], 10))
+  bucketized_housing_median_age = tf.feature_column.bucketized_column(
+    housing_median_age, boundaries=get_quantile_based_boundaries(
+      training_examples["housing_median_age"], 5))
+  bucketized_median_income =tf.feature_column.bucketized_column(
+    median_income, boundaries=get_quantile_based_boundaries(
+      training_examples["median_income"], 5))
+  bucketized_rooms_per_person =tf.feature_column.bucketized_column(
+    rooms_per_person, boundaries=get_quantile_based_boundaries(
+      training_examples["rooms_per_person"], 3))
+
+RMSE = 88.79. Bucketing definitely seemed to make sense for the data since there seemed to a lot of noise.
+
+Task2: One useful feature cross would be latitude and longitude (which is given and does well). Another would be median_income, latitude, and longitude. This would show where wealthy city blocks were.

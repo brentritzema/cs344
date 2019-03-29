@@ -1,0 +1,23 @@
+a. What does the Pearson correlation coefficient measure? Identify one example value from the correlation table you compute and explain why it makes sense.
+
+The Pearson correlation coefficient measures "the linear correlation between two variables X and Y" (from Wikipedia as linked in the exercise).
+One example value from the correlation table is the correlation between total_rooms and total_bedrooms which is 0.9. This makes sense because as total_bedrooms increases, total_should as well.
+
+b. Submit your solutions to tasks 1–2. Include the features you selected for task 1 and the synthetic features you developed for task 2; include the final RMS errors but not the training output. Did you beat the Google-provided baselines?
+Task 1:
+minimal_features = [
+    "median_income",
+    "rooms_per_person",
+    "latitude"
+]
+RMSE = 112.28, which did not beat the google provided baseline that had an RMSE of 111.89.
+
+Task 2:
+selected_training_examples = training_examples
+selected_validation_examples = validation_examples
+selected_training_examples["distance_from_san_francisco"] = abs(selected_training_examples["latitude"] - 38)
+selected_validation_examples["distance_from_san_francisco"] = abs(selected_validation_examples["latitude"] - 38)
+selected_training_examples["distance_from_LA"] = abs(selected_training_examples["latitude"] - 34)
+selected_validation_examples["distance_from_LA"] = abs(selected_validation_examples["latitude"] - 34)
+
+RMSE = 163.88, which did not beat the google provided baseline that had an RMSE of 139.25. This makes sense since their model better represents housing hotspots.

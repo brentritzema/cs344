@@ -1,0 +1,14 @@
+a. Compare and contrast Seaborn vs. MatPlotLib.
+Seaborn seems to take care of a lot of labeling for you where MatPlotLib seems much more customizable but also makes complex plots a lot harder to make.
+
+b. How big is this dataset and does it seem of an appropriate size for this problem?
+The dataset seems to have 397 entries. It seems appropriate considering it would be harder to get a whole lot more data I believe.
+
+c. Explain what the prescribed normalization of the data does.
+It allows us to reduce the possibility that the model depends on the units chosen for our numerical input features.
+
+d. Is this an example of a linear regression model?
+It is not a linear regression model since it uses non linear activation functions.
+
+e. In their conclusion, they claim that smaller datasets “prefer” smaller networks. Do you agree? Explain your answer.
+I agree with that conclusion because if your network is too large then it could just memorize each example and not generalize, therefore overfitting the data.
