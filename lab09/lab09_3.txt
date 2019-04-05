@@ -1,0 +1,5 @@
+a. (i) The full size is 25,000 images but we are using 2,000.
+   (ii) It is very similar in it's setup, but the inputs are larger and the output has 1 node for output whereas for the one in class it had to choose between 10 different nodes.
+   (iii) I noticed that I saw basically full pictures of cats in the intermediate representations. Then as it went lower into the network those pictures turned into lines.
+b. (i) Data augmentation is where you randomly transform the input data so that "our model will never see the exact same picture twice".
+   (ii) The best I got wsa with 30 epochs and it was 78% accuracy for training and validation. When I increase the epochs to 40 it didn't do well, seemed to be overfitting.

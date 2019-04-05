@@ -1,0 +1,3 @@
+a. We are regularizing with respect to sparsity because it will avoid overfitting and the resulting model should be more efficient.
+b. L1 regularization increases sparsity by encouraging weights of the model to be exactly zero.
+c. The best log loss value I got was 0.25 with a gamma value of 0.2

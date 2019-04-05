@@ -1,0 +1,4 @@
+a. Linear regression does not do that well. It fails to make much improvement from the initial RMSE and doesn't really seem to converge.
+b. L2 loss doesn't strongly differentiate between getting something wrong by a small amount and getting something wrong by a large amount. LogLoss penalizes the model for getting things wrong by a large amount.
+c. With the logistic regression method it seems to do a little better, RMSE for logistic regression wasn't all over the place like linear regression was.
+d. I got 0.81 and 0.78 for AOC and accuracy by increasing steps to 5000 and batch_size to 200.
