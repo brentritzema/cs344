@@ -1,0 +1,12 @@
+Would you rather use TensorFlow or Keras to build your models?
+
+I think I would rather use Keras as it takes care of a lot of setup and little details that are common between models.
+
+Tasks 1 & 2: Report your best hyper-parameter settings and their resulting performance on the testing dataset.
+
+My hyper-parameters were:
+    learning_rate=0.001,
+    steps=1500,
+    batch_size=100,
+    hidden_units=[10, 9],
+and my final RMSE was: 109.41

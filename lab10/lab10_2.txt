@@ -1,0 +1,12 @@
+What does AdaGrad do to boost performance?
+
+AdaGrad optimizes the learning rate for each individual coefficient in the model, which gradually lowers the overall learning rate.
+
+Tasks 1–4: Report your best hyperparameter settings and their resulting performance.
+
+My best parameters were:
+ my_optimizer=tf.train.AdagradOptimizer(learning_rate=0.2),
+    steps=1500,
+    batch_size=100,
+    hidden_units=[10, 10],
+and the validation RMSE was: 66.22

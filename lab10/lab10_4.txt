@@ -1,0 +1,19 @@
+Task 1: Is a linear model ever preferable to a deep NN model?
+
+If it can do the job, it is preferable to a deep NN model because it is simpler.
+
+Task 2: Does the NN model do better than the linear model?
+
+The base NN model does not do better than the linear model.
+
+Task 3: Do embeddings do much good for sentiment analysis tasks?
+
+It seemed to help the NN quite a bit. It improved accuracy by around 20%.
+
+Tasks 4–5: Name two words that have similar embeddings and explain why that makes sense.
+
+Two words that have similar embeddings are terrible and awful, this obviously makes sense since they are basically synonyms and could be interchanged.
+
+Task 6: Report your best hyper-parameters and their resulting performance.
+
+My best hyper-parameters were a learning rate of 0.1 in the AdagradOptimizer, 1000 steps, and two levels of 10 hidden units. I got an accuracy of 0.81 on the test set.
